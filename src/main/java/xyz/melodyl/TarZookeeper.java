@@ -40,7 +40,7 @@ public class TarZookeeper {
         }
     }
 
-    // java -DconfigPath=./zoo.cfg -jar TarZookeeper-1.0-SNAPSHOT.jar
+    // java -DconfigPath=./zoo.cfg -jar TarZookeeper.jar
     public static void main(String[] args) throws IOException {
         if (args.length == 1 && "help".equals(args[0])) {
             printUsageThenExit();
