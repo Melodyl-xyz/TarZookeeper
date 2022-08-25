@@ -1,5 +1,5 @@
 # Introduction
-TarZookeeper receives `zoo.cfg`, picks logs which contain the zookeeper whole data, and compress logs and save it.
+TarZookeeper receives `zoo.cfg`, picks logs which contain the zookeeper whole data, and compress logs and save it.   
 You'd better run it on leader which truly has whole data.
 
 # Usage
