@@ -40,7 +40,6 @@ public class TarZookeeper {
         }
     }
 
-    // java -DconfigPath=./zoo.cfg -jar TarZookeeper.jar
     public static void main(String[] args) throws IOException {
         if (args.length == 1 && "help".equals(args[0])) {
             printUsageThenExit();
@@ -125,7 +124,7 @@ public class TarZookeeper {
             }
 
             savedTxn = tsf.getDataDir().listFiles(new PrefixFileFilter(PREFIX_TXN));
-            if (savedTxn == null || savedTxn.length > 0) {
+            if (savedTxn == null || savedTxn.length == 0) {
                 return null;
             }
         }
@@ -174,10 +173,10 @@ public class TarZookeeper {
 
     static void printUsage() {
         System.out.println("Usage:");
-        System.out.println("TarZookeeper -DconfigPath=[configPath] " +
+        System.out.println("java -DconfigPath=[configPath] " +
                 "-DtxnDir=[txnDir] -DsnapDir=[snapDir] -DtarDir=[tarDir] " +
-                "-DsnapCount=[snapCount]");
-        System.out.println("\tconfigPath -- path to the zookeeper config file");
+                "-DsnapCount=[snapCount] -jar tar-zookeeper.jar");
+        System.out.println("\tconfigPath -- path to the zoo.cfg file");
         System.out.println("\ttxnDir -- path to the txn directory");
         System.out.println("\tsnapDir -- path to the snap directory");
         System.out.println("\ttarDir -- path to the compress directory, default is ./");

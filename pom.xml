@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>xyz.melodyl</groupId>
-  <artifactId>TarZookeeper</artifactId>
+  <artifactId>tar-zookeeper</artifactId>
   <version>1.0.0-Beta</version>
 
   <name>TarZookeeper</name>

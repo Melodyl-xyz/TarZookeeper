@@ -1,3 +1,25 @@
+# Introduction
+TarZookeeper receives `zoo.cfg`, picks logs which contain the zookeeper whole data, and compress logs and save it.
+You'd better run it on leader which truly has whole data.
+
+# Usage
+```
+java -DconfigPath=./zoo.cfg -jar TarZookeeper.jar
+```
+
+# Help
+```
+~ % java -jar TarZookeeper.jar help
+Usage:
+TarZookeeper -DconfigPath=[configPath] -DtxnDir=[txnDir] -DsnapDir=[snapDir] -DtarDir=[tarDir] -DsnapCount=[snapCount]
+        configPath -- path to the zookeeper config file
+        txnDir -- path to the txn directory
+        snapDir -- path to the snap directory
+        tarDir -- path to the compress directory, default is ./
+        snapNum -- the number of snaps you want
+
+```
+
 # 介绍
 TarZookeeper在读取zoo.cfg配置后，能够挑选出包含zookeeper全部数据的事务日志和快照日志文件，并转为tar.gz的压缩包保存到本地。  
 你可以通过该压缩包将zookeeper的数据迁往其它的zookeeper。
