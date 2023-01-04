@@ -15,7 +15,7 @@ public class TarZookeeper {
     private static final String PREFIX_TXN = "log";
     private static final String SNAPSHOT_DIR_KEY = "dataDir";
     private static final String TXN_DIR_KEY = "dataLogDir";
-    private static final String TAR_FILENAME = "tarZookeeper.tar.gz";
+    private static final String TAR_FILENAME = "data.tar.gz";
 
     static class TarZookeeperConfig {
         String snapDir;
