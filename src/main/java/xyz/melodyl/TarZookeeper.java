@@ -97,6 +97,10 @@ public class TarZookeeper {
                 tzc.txnDir = value;
             }
         }
+
+        if (tzc.txnDir == null) {
+            tzc.txnDir = tzc.snapDir;
+        }
         return tzc;
     }
 
@@ -139,12 +143,12 @@ public class TarZookeeper {
         TarArchiveOutputStream tOut = new TarArchiveOutputStream(gOut);
         tOut.setLongFileMode(TarArchiveOutputStream.LONGFILE_POSIX);
 
-        for(File f : snap) {
+        for (File f : snap) {
             System.out.printf("compress snap:%s into %s\n", f.getName(), tarFile.getAbsolutePath());
             addFileToArchive(f, tOut);
         }
 
-        for(File f : txn) {
+        for (File f : txn) {
             System.out.printf("compress txn:%s into %s\n", f.getName(), tarFile.getAbsolutePath());
             addFileToArchive(f, tOut);
         }
